@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import { Home, Contact, About } from "./pages";
 
 const AppMainPage = () => {
@@ -7,12 +8,17 @@ const AppMainPage = () => {
       <nav className="container-inner">
         <ul>
           <li>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
     </main>
   );
 };
