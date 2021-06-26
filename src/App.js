@@ -1,3 +1,7 @@
 import Router from "./Router";
-const App = () => <Router />;
+const App = () => {
+  console.log("App here...");
+  return <Router />;
+};
+
 export default App;
